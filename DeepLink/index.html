@@ -12,6 +12,8 @@
 
 <button onclick="input()">이동</button> </br>
 </br>
+  <button type="button" onclick="clickA()">딥링크 테스트!</button>
+ 
 
 <script type="text/javascript">
 
@@ -19,7 +21,17 @@ function input(){
 var input = document.getElementById("input").value;
 window.location.href = input;
 }
+
+ function clickA() {
+  android.deepLink({
+        link: "yanoljamotel://place/detail?idx=123",
+        replaceMode: "back" }
+    , function (completion) {
+        console.log(completion);
+    });
+ }
 </script>
- 
+
+  
  </body>
 </html>
